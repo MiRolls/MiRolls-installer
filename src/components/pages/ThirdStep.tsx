@@ -10,8 +10,8 @@ export default function (){
 
     function download(){
         setDownloadSpeed("Downloading ~")
-        axios.post("/install/download",{file:"default"}).then(res=>{
-            if(res.data.message === "success"){
+        axios.post("/install/download",JSON.stringify({file:"default"})).then(res=>{
+            if(res.data.message != "error"){
                 setDownloadSpeed("Download Done!")
                 setTimeout(()=>{
                     setOpacity(0)
@@ -20,10 +20,10 @@ export default function (){
                     },1000)
                 },1000)
             }else {
-                setDownloadSpeed("Can't download file." + res.data.error)
+                setDownloadSpeed("Can't download file. " + res.data.error)
             }
         }).catch(err => {
-            setDownloadSpeed("Can't download file." + err)
+            setDownloadSpeed("Can't download file. " + err)
         })
     }
 
