@@ -43,7 +43,7 @@ export default function () {
             Protocol: "tcp",
             Host: (dbServer.current as any).getAnswer(),
             Port: 3306,
-            Database: (dbServer.current as any).getAnswer()
+            Database: (dbName.current as any).getAnswer()
         }
     }
 
