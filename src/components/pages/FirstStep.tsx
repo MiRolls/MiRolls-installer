@@ -81,6 +81,8 @@ export default function (){
                 <InputBar placeholder={'The default theme only supports zh or en'} question={"Your Size Language: "} ref={siteLang}></InputBar>
                 <InputBar placeholder={"https://github.com/fluidicon.png"} question={"Your Size Logo: "} ref={siteLogo}></InputBar>
                 <span className={"tips"}>There all content correspond config.yaml</span>
+                <span className={"tips"}>For advanced settings, please modify in config.yaml</span>
+                <span className={"tips"}>China Internet Special Regulations Tips：注意如果你需要icp备案并挂载备案号的请在config目录下的config.yaml里修改</span>
                 <button className={"nextStep"} onClick={submit}>{buttonText}</button>
                 {isGoNext}
             </div>
